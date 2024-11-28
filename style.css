@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Navigation */
+.nav {
+    background-color: #0056b3;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* Home Section */
+.home-section {
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    margin-top: 80px; /* Adjusted for fixed navbar */
+}
+
+.home-section h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.home-section p {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.service-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.service-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.service-box a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.service-box a:hover {
+    background-color: #0056b3;
+}
+
+/* Slot Booking Section */
+.slot-booking-section {
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    margin-top: 80px; /* Ensures space below the navbar */
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+    justify-items: center;
+}
+
+.slot {
+    padding: 15px;
+    background-color: #e9f5ff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.slot:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.slot.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+.slot.disabled {
+    background-color: #d3d3d3;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.slot .icon {
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.slot.disabled .icon {
+    color: #888;
+}
+
+.confirm-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.confirm-btn:disabled {
+    background-color: #b0c4de;
+    cursor: not-allowed;
+}
+
+.confirm-btn:hover:enabled {
+    background-color: #0056b3;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    margin-top: 80px; /* Added margin to ensure it doesn't overlap with previous content */
+}
+
+.contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-section p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Payment Section */
+.payment-section {
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    margin-top: 80px; /* Added margin to prevent overlap */
+}
+
+.payment-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.payment-section p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.payment-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-form select,
+.payment-form input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.payment-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.payment-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+    

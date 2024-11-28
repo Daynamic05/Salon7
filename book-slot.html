@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Management - Book Slot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="book-slot.html">Book Slot</a>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Payment</a>
+    </div>
+
+    <div class="slot-booking-section" id="book-slot">
+        <h2>Select a Time Slot</h2>
+        <div class="time-slots">
+            <div class="slot" data-time="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</div>
+            <div class="slot" data-time="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</div>
+            <div class="slot disabled">11:00 AM - 12:00 PM</div>
+            <div class="slot" data-time="12:00 PM - 01:00 PM">12:00 PM - 01:00 PM</div>
+            <div class="slot disabled">01:00 PM - 02:00 PM</div>
+            <div class="slot" data-time="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</div>
+        </div>
+        <button class="confirm-btn" id="confirmBtn" disabled>Confirm Time Slot</button>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Salon Management. All rights reserved.</p>
+    </div>
+
+    <script>
+        const slots = document.querySelectorAll('.slot');
+        const confirmBtn = document.getElementById('confirmBtn');
+
+        slots.forEach(slot => {
+            slot.addEventListener('click', () => {
+                if (!slot.classList.contains('disabled')) {
+                    // Toggle the 'selected' class
+                    slot.classList.toggle('selected');
+
+                    // Enable/disable the confirm button
+                    confirmBtn.disabled = !document.querySelector('.slot.selected');
+
+                    // Example: Confirmation and booking logic
+                    if (slot.classList.contains('selected')) {
+                        const selectedSlot = slot.dataset.time;
+                        if (confirm(`Are you sure you want to book the ${selectedSlot} slot?`)) {
+                            // Replace this with your actual booking logic
+                            alert('Slot booked successfully!');
+                            // You might want to disable the selected slot and other slots to prevent double bookings
+                            slot.classList.add('disabled');
+                            slots.forEach(s => s.classList.add('disabled'));
+                            confirmBtn.disabled = true;
+                        } else {
+                            slot.classList.remove('selected');
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
